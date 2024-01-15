@@ -25,6 +25,8 @@ namespace WindowsFormsApp2
             bool fileExist1 = File.Exists(Application.StartupPath + @"\\listTT.dat");
             bool fileExist2 = File.Exists(Application.StartupPath + @"\\homeworkList.dat");
             bool fileExist3 = File.Exists(Application.StartupPath + @"\\testList.dat");
+            bool fileExist4 = File.Exists(Application.StartupPath + @"\\gpaCalc.dat");
+
             if (fileExist1)
             {
                 FileStream fs = new FileStream(Application.StartupPath + @"\\listTT.dat", FileMode.Open);
@@ -45,6 +47,13 @@ namespace WindowsFormsApp2
                 BinaryFormatter formatter3 = new BinaryFormatter();
                 Form4.testList = (List<test>)formatter3.Deserialize(fs3);
                 fs3.Close();
+            }
+            if (fileExist4)
+            {
+                FileStream fs4 = new FileStream(Application.StartupPath + @"\\gpaCalc.dat", FileMode.Open);
+                BinaryFormatter formatter4 = new BinaryFormatter();
+                Form9.savedGrade = (Grade)formatter4.Deserialize(fs4);
+                fs4.Close();
             }
 
             DateTime today = DateTime.Now;
@@ -128,6 +137,9 @@ namespace WindowsFormsApp2
 
                 }
             }
+            label6.Text = "취득 학점: " + Form9.savedGrade.creditNum;
+            label7.Text = "전체 평점: " + Form9.savedGrade.totalGpaNum;
+            label8.Text = "전공 평점: " + Form9.savedGrade.majorGpaNum;
 
 
 
@@ -187,7 +199,8 @@ namespace WindowsFormsApp2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("준비중입니다!","info",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Form9 form9 = new Form9();
+            form9.ShowDialog();
         }
         public void updateData()
         {
@@ -280,7 +293,7 @@ namespace WindowsFormsApp2
 
         private void button6_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("프로그램 제작자: 전남대 컴공 전산쟁이 \n프로그램 버전: ver 1.0 \n프로그램 업데이트 소식은 https://blog.naver.com/zzzz7037 \n에서 확인하실 수 있습니다.", "프로그램 제작자", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("프로그램 제작자: 전남대 컴공 전산쟁이 \n프로그램 버전: ver 1.1 \n프로그램 업데이트 소식은 https://blog.naver.com/zzzz7037 \n에서 확인하실 수 있습니다.", "프로그램 제작자", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -386,18 +399,22 @@ namespace WindowsFormsApp2
                 FileStream fs1;
                 FileStream fs2;
                 FileStream fs3;
+                FileStream fs4;
 
 
                 fs1 = new FileStream(Application.StartupPath + @"\\listTT.dat", FileMode.Create);
                 fs2 = new FileStream(Application.StartupPath + @"\\homeworkList.dat", FileMode.Create);
                 fs3 = new FileStream(Application.StartupPath + @"\\testList.dat", FileMode.Create);
+                fs4 = new FileStream(Application.StartupPath + @"\\gpaCalc.dat", FileMode.Create);
                 BinaryFormatter formatter = new BinaryFormatter();
                 formatter.Serialize(fs1, Form2.listTT);
                 formatter.Serialize(fs2, Form3.homeworkList);
                 formatter.Serialize(fs3, Form4.testList);
+                formatter.Serialize(fs4, Form9.savedGrade);
                 fs1.Close();
                 fs2.Close();
                 fs3.Close();
+                fs4.Close();
             }
             catch(Exception a)
             {
@@ -459,6 +476,11 @@ namespace WindowsFormsApp2
         private void label5_Click(object sender, EventArgs e)
         {
             Form1_Shown();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

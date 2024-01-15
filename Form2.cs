@@ -116,7 +116,13 @@ namespace WindowsFormsApp2
                     listArr[i].SubItems.Add("");
                 }
             }
-            Color[] colors = { Color.Aqua, Color.LightPink, Color.LightCyan, Color.LightGoldenrodYellow, Color.MediumPurple, Color.LightGreen, Color.OrangeRed, Color.Ivory, Color.PowderBlue, Color.Sienna };
+            Color[] colors = {
+            Color.Aqua, Color.LightPink, Color.LightCyan, Color.LightGoldenrodYellow,
+            Color.MediumPurple, Color.LightGreen, Color.OrangeRed, Color.Ivory,
+            Color.PowderBlue, Color.Sienna, Color.Blue, Color.Red, Color.Green,
+            Color.Yellow, Color.Purple, Color.Orange, Color.Cyan, Color.Magenta,
+            Color.Brown, Color.Gray
+        };
 
             for (int i = 0; i < listTT.Count; i++)
             {

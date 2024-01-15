@@ -77,3 +77,4 @@ D:\vs2019\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.c
 D:\vs2019\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CopyComplete
 D:\vs2019\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 D:\vs2019\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+D:\vs2019\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form9.resources

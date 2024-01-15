@@ -30,6 +30,7 @@ namespace WindowsFormsApp2
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -56,6 +57,9 @@ namespace WindowsFormsApp2
             this.button10 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -66,7 +70,7 @@ namespace WindowsFormsApp2
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(205, 27);
             this.label1.TabIndex = 0;
-            this.label1.Text = "대학생활 도우미 v1.0";
+            this.label1.Text = "대학생활 도우미 v1.1";
             // 
             // button1
             // 
@@ -293,12 +297,46 @@ namespace WindowsFormsApp2
             this.label5.Text = "클릭시 확인";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Location = new System.Drawing.Point(271, 21);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 15);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "취득 학점:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Location = new System.Drawing.Point(417, 21);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 15);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "전체 평점:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.Location = new System.Drawing.Point(570, 22);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(77, 15);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "전공 평점:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(731, 573);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button10);
@@ -317,9 +355,11 @@ namespace WindowsFormsApp2
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "대학생활 도우미 v1.0";
+            this.RightToLeftLayout = true;
+            this.Text = "대학생활 도우미 v1.1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,6 +393,9 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }
 
